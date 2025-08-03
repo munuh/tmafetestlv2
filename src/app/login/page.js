@@ -4,8 +4,9 @@ import { useRouter } from 'next/navigation';
 import { login } from '../api/auth';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('john@mail.com');
-  const [password, setPassword] = useState('changeme');
+const [email, setEmail] = useState(process.env.NEXT_PUBLIC_DEV_EMAIL || '');
+const [password, setPassword] = useState(process.env.NEXT_PUBLIC_DEV_PASSWORD || '');
+    
   const [error, setError] = useState('');
   const router = useRouter();
 
